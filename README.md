@@ -3,6 +3,7 @@
 ## Struttura del progetto
 
 Il progetto è strutturato in due cartelle: **tesislustering** e **Clientrepository**. La prima contiene il Web Service e la Web Application, la seconda l'applicazione client.
+
 Nella cartella [docs](https://github.com/netgroup-polito/passive-monitoring-technique/tree/master/docs) è disponibile la documentazione dettagliata.
 
 Per importare il progetto in Eclipse:
@@ -11,8 +12,6 @@ Per importare il progetto in Eclipse:
 1. Dal menu di Eclipse  scegliere **File -> Import-> Existing Maven Project -> Next -> Selezionare la cartella in cui è stato scaricato il progetto -> Finish**.
 
 Attendere qualche minuto che Maven completi la risoluzione delle dipendenze e la build del progetto.
-
-Per eseguire il Web Service in ambiente Tomcat da Eclipse, con click destro sulla cartella del progetto aprire il menu contestuale e scegliere **Run As -> Run on server**.
 
 ## Installazione tools e framework
 
@@ -100,7 +99,18 @@ CREATE TABLE `infoclusters` (
 )
 ~~~
 
-## Creazione del jar
+## Avvio del Web Service
+
+Per eseguire il Web Service in ambiente Tomcat da Eclipse, con click destro sulla cartella del progetto aprire il menu contestuale e scegliere **Run As -> Run on server**.
+
+## La web application
+
+Dopo aver avviato il server si può accedere al web service dal browser al link http://localhost:8080/tesiclustering/rest/index.jsp.
+Verrà visualizzata la home page della web application:
+
+![home page](https://github.com/netgroup-polito/passive-monitoring-technique/blob/master/docs/index.PNG)
+
+## Creazione del jar per la distribuzione del client
 
 E' possibile anche lanciare l'applicazione client dal prompt dei comandi. Basta semplicemente usare l'assemply plugin di Maven per generare il file .jar.
 I passi da seguire per generare un executable jar con Maven sono i seguenti:
@@ -141,8 +151,12 @@ Quindi per eseguirlo basta andare nella cartella in cui è contenuto il file jar
 ~~~bash
 java -cp .\client-0.0.1-SNAPSHOT-jar-with-dependencies.jar it.polito.client.ClusteringClient
 ~~~
-
-
 .
+
+Il prompt dei comandi si presenta in questo modo:
+
+![prompt](https://github.com/netgroup-polito/passive-monitoring-technique/blob/master/docs/prompt.PNG) .
+
+
 
 

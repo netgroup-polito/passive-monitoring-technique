@@ -1,0 +1,46 @@
+{"name":"Kdl.graphml","id":4,"execution":{
+    "id": "1",
+    "user_id":"11",
+    "nodes":["10","100"],
+    "rate": "10",
+    "topology": "Geant2012.graphml",
+    "info_clusters": [
+      {
+        "num_monitored_nodes": 24,
+        "num_monitored_edges": 423,
+        "extended_diameter": 27,
+        "monitored_diameter": 1,
+        "num_extended_edges": 315,
+        "id": 0,
+        "num_extended_nodes": 176
+      },
+      {
+        "num_monitored_nodes": 2,
+        "num_monitored_edges": 1,
+        "extended_diameter": 1,
+        "monitored_diameter": 1,
+        "num_extended_edges": 1,
+        "id": 1,
+        "num_extended_nodes": 2
+      },
+      {
+        "num_monitored_nodes": 2,
+        "num_monitored_edges": 1,
+        "extended_diameter": 1,
+        "monitored_diameter": 1,
+        "num_extended_edges": 1,
+        "id": 2,
+        "num_extended_nodes": 2
+      },
+      {
+        "num_monitored_nodes": 2,
+        "num_monitored_edges": 1,
+        "extended_diameter": 1,
+        "monitored_diameter": 1,
+        "num_extended_edges": 1,
+        "id": 3,
+        "num_extended_nodes": 2
+      }
+    ],
+    "num_clusters": 4
+  },"xml_file":null}

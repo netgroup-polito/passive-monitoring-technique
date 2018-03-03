@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="it.polito.tesiclustering.model.Execution" table="Executions">
+		<id name="id" type="int" column="id">
+			<generator class="increment" />
+		</id>
+		<property name="rate">
+			<column name="rate" />
+		</property>
+		<property name="num_clusters">
+			<column name="num_clusters" />
+		</property>
+		<many-to-one name="topology" column="topology" lazy="false" />
+		<property name="nodes">
+			<column name="nodes" />
+		</property>
+		<list name="info_clusters" lazy="false" cascade="all">
+			<key column="execution_id" />
+			<index column="idx" />
+			<one-to-many class="it.polito.tesiclustering.model.InfoCluster" />
+		</list>
+	</class>
+</hibernate-mapping>

@@ -28,10 +28,6 @@ nb-configuration.xml
 .project
 .classpath
 
-
-.py
-.class
-
 # Maven plugins noise
 dependency-reduced-pom.xml
 pom.xml.versionsBackup

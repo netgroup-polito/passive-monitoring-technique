@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="it.polito.tesiclustering.model.Graph" table="Graphs">
+		<id name="name" column="name">
+		</id>
+		<property name="xml_file">
+			<column name="xml_file" />
+		</property>
+	</class>
+</hibernate-mapping>

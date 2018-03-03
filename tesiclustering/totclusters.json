@@ -1,0 +1,8 @@
+[
+    {
+        "topology": "Bics.graphml", 
+        "nodes": "[[33,34,\"in\"],[33,34,\"out\"],[34,33,\"in\"],[34,33,\"out\"]]", 
+        "info_clusters": [], 
+        "num_clusters": 0
+    }
+]

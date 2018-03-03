@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="it.polito.tesiclustering.model.InfoCluster" table="InfoClusters">
+		<id name="id_cluster" type="int" column="id_cluster">
+			<generator class="increment" />
+		</id>
+		<many-to-one name="execution_id"
+			class="it.polito.tesiclustering.model.Execution" cascade="all"
+			update="true">
+			<column name="execution_id" />
+		</many-to-one>
+		<property name="num_monitored_nodes" type="int">
+			<column name="num_monitored_nodes" />
+		</property>
+		<property name="id" type="int">
+			<column name="id" />
+		</property>
+		<property name="num_extended_nodes" type="int">
+			<column name="num_extended_nodes" />
+		</property>
+		<property name="num_monitored_edges" type="int">
+			<column name="num_monitored_edges" />
+		</property>
+		<property name="num_extended_edges" type="int">
+			<column name="num_extended_edges" />
+		</property>
+		<property name="monitored_diameter" type="int">
+			<column name="monitored_diameter" />
+		</property>
+		<property name="extended_diameter" type="int">
+			<column name="extended_diameter" />
+		</property>
+	</class>
+</hibernate-mapping>

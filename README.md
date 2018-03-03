@@ -7,10 +7,9 @@ Il progetto è strutturato in due cartelle: tesislustering e Clientrepository. L
 
 1. Eclipse IDE for Java EE Developers (Neon Packages). Il link per effettuare il download
 è :https://www.eclipse.org/downloads/packages/release/Neon/3.
-1. Apache Tomcat 7. Il link per effettuare il download
-è :https://tomcat.apache.org/download-70.cgi
+1. Apache Tomcat 7. Il link per effettuare il download è: https://tomcat.apache.org/download-70.cgi
 1. Integrazione di networkx in jython per eseguire script in python lato java. Scaricare
-networkx :https://networkx.github.io/documentation/networkx-1.10/download.html,
+networkx: https://networkx.github.io/documentation/networkx-1.10/download.html,
 scaricare jython 2.7.0 :http://www.jython.org/downloads.html e python 2.7.0 al
 link :https://www.python.org/download/releases/2.7/, estrarre i rispettvi contenuti in
 3 cartelle differenti. Aggiungere python 2.7.0 e jython 2.7.0 alle variabili d'ambiene (in
@@ -18,16 +17,24 @@ Windows). Su Windows eseguire il comando (jython -m pip install -U pip ) per ins
 pip (il gestore dei pacchetti di python). Nella cartella source di networkx eliminare il file
 networkx/generators/atlas.py. Nel file networkx/readwrite/gml.py, rimuovere tutti i
 riferimenti a lib2to3 (dovuto ad un bug presente in Jython, lib2to3 non è disponibile).
-Alle righe 44-46, commentare tu􀆫 gli imports from lib2to3 e alla riga 75 cambiare :
+Alle righe 44-46, commentare tutti gli imports from lib2to3 e alla riga 75 cambiare :
+
+~~~python
 rtp_fix_unicode = RefactoringTool(['lib2to3.fixes.fix_unicode'],
 {'print_function': True})
+~~~
+
 in:
+
+~~~python
 rtp_fix_unicode = None
+~~~
+
 Alla riga 145, nel try-except statement, rimuovere ParseError e TokenError. A questo
 punto è necessario tornare nella cartella source ed eseguire il comando: jython/pip
 install . A questo punto abbiamo integrato networkx in jython, quindi basta
 semplicemente caricare il file.jar in eclipse nel build path del progetto maven.
-1. Jython versione 2.7.0. Prendere il file.jar presente nella cartella jython 2.7.0 e
+1. Jython versione 2.7.0. Prendere il file.jar presente nella cartella jython 2.7.0 (ottenuto dopo l'integrazione di networkx) e
 aggiungerlo al Build Path del progetto. Tasto destro sul progetto maven -> Build Path ->
 Configure Build Path ->Libraries-> Add External JARs-> Apply->OK.
 1. Hibernate.
@@ -87,6 +94,45 @@ CREATE TABLE `infoclusters` (
 
 
 ## Creazione del jar
+E' possibile anche lanciare l'applicazione client dal prompt dei comandi. Basta semplicemente usare l'assemply plugin di Maven per generare il file .jar.
+I passi da seguire per generare un executable jar con Maven sono i seguenti:
 
+Per creare un jar eseguibile, non abbiamo bisogno di ulteriori dipendenze nel pom.xml. Abbiamo
+solo bisogno di creare un progetto Maven Java e avere almeno una classe con il metodo
+principale main(). Bisogna semplicemente aggiungere il plugin Apache Maven Asseebly Plugin nel pom.xml:
+
+~~~xml
+        <plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-assembly-plugin</artifactId>
+		    <executions>
+		        <execution>
+		            <phase>package</phase>
+		            <goals>
+		                <goal>single</goal>
+		            </goals>
+		            <configuration>
+		                <archive>
+		                <manifest>
+		                    <mainClass>
+		                        it.polito.client.ClusteringClient
+		                    </mainClass>
+		                </manifest>
+		                </archive>
+		                <descriptorRefs>
+		                    <descriptorRef>jar-with-dependencies</descriptorRef>
+		                </descriptorRefs>
+		            </configuration>
+		        </execution>
+		    </executions>
+		</plugin>
+~~~
+
+Quindi per eseguirlo basta andare nella cartella in cui è contenuto il file jar è lanciare il comando:
+
+~~~bash
+java -cp .\client-0.0.1-SNAPSHOT-jar-with-dependencies.jar it.polito.client.ClusteringClient
+~~~
+.
 
 

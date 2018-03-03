@@ -5,10 +5,18 @@
 Il progetto è strutturato in due cartelle: **tesislustering** e **Clientrepository**. La prima contiene il Web Service e la Web Application, la seconda l'applicazione client.
 Nella cartella [docs](https://github.com/netgroup-polito/passive-monitoring-technique/tree/master/docs) è disponibile la documentazione dettagliata.
 
+Per importare il progetto in Eclipse:
+
+1. Clonare il repository in una cartella sul proprio PC.
+1. Dal menu di Eclipse  scegliere **File -> Import-> Existing Maven Project -> Next -> Selezionare la cartella in cui è stato scaricato il progetto -> Finish**.
+
+Attendere qualche minuto che Maven completi la risoluzione delle dipendenze e la build del progetto.
+
+Per eseguire il Web Service in ambiente Tomcat da Eclipse, con click destro sulla cartella del progetto aprire il menu contestuale e scegliere **Run As -> Run on server**.
+
 ## Installazione tools e framework
 
-1. **Eclipse IDE for Java EE Developers (Neon Packages)**. Il link per effettuare il download
-è :https://www.eclipse.org/downloads/packages/release/Neon/3.
+1. **Eclipse IDE for Java EE Developers (Neon Packages)**. Il link per effettuare il download è: https://www.eclipse.org/downloads/packages/release/Neon/3.
 1. **Apache Tomcat 7**. Il link per effettuare il download è: https://tomcat.apache.org/download-70.cgi
 1. Integrazione di **networkx** in jython per eseguire script in python lato java. Scaricare
 networkx: https://networkx.github.io/documentation/networkx-1.10/download.html,

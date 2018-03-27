@@ -11,4 +11,4 @@ Lo script usa in input il file result.json in cui sono contenuti i valori dei co
 
 Il grafico stacked bar ritornato è il seguente:
 
-![graph](https://github.com/netgroup-polito/passive-monitoring-technique/blob/master/docs/bics30sloss1.PNG)
+![graph](https://github.com/netgroup-polito/passive-monitoring-technique/blob/master/docs/bics30sloss1.png)

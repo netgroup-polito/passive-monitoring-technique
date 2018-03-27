@@ -57,3 +57,8 @@ Questo  esegue lo script iterative_clustering.py per ogni file .graphml presente
 1. Crea la cartella Clusters e un file vuoto al suo interno chiamato statistics.json.
 1. Esegue interative_clustering.py per ogni file .graphml presente nel dataset The Internet Topolgy Zoo.
 1. Prende l'output per ogni iterazione e lo appende a statistics.json.
+
+Eseguendo quindi i due script sopra ottengo i seguenti grafici:
+![graph](https://github.com/netgroup-polito/passive-monitoring-technique/blob/master/Testing2/Nodes.png)
+
+![graph](https://github.com/netgroup-polito/passive-monitoring-technique/blob/master/Testing2/Edges.png)

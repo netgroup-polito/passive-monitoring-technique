@@ -36,3 +36,24 @@ Nel caso in esame lo script Net_Mininet.py legge le informazioni riguardo la top
 G = nx.read_graphml('Geant2012.graphml',str)
 ~~~
 In questo modo è possibile emulare topologie di reti differenti.
+
+Gli ultimi due scripts servono come Packet Loss Tester, sono usati per verificare l'accuratezza delle misure fatte dal Controller. Vengono lanciati all'interno del file Net_Mininet.py in questo modo:
+
+
+~~~python
+H1=arrayHost[0]
+H1.cmd('rm -r /tmp/pnpm')
+H1.cmd('screen -d -m python -m trace -t /home/fmesolella/Desktop/Server.py'+" "+str(H1.IP())+" ")
+			
+for h in net.hosts:	
+	arrayIpHost.remove(h.IP())
+	s=""
+	for h1 in arrayIpHost:
+		s=s+h1+" "
+	arrayIpHost.append(h.IP())
+	h.cmd('python /home/fmesolella/Desktop/Client.py'+" "+str(H1.IP())+" "+str(h.IP())+" "+str(s)+" >> error.log 2>&1 &")
+~~~
+
+Il primo, Client.py è un generatore di pacchetti UDP. Il secondo, Server.py, è un packets collector. Raccoglie i report ricevuti da tutti i generatori di pacchetti e scrive in un file (summary.dat) il numero di pacchetti inviati e ricevuti.
+
+Il programma Controller.py invece viene lanciato in parallelo e dopo la lettura dei contatori in input e output di ogni switch, scrive i risultati in un file results.json. I valori presenti nei due file vengono confrontati per determinare l'accuracy delle misure fatte dal Controller.

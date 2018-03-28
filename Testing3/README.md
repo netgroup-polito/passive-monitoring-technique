@@ -1,6 +1,6 @@
 # Testing 3
 
-L'obiettivo è quello di esaminare le caratteristiche dei cluster in tre topologie di rete reali:
+L'obiettivo è quello di esaminare le caratteristiche dei clusters in tre topologie di rete reali:
 1. Géant con 40 nodi fisici.
 1. Colt Telecom con 152 nodi fisici. 
 1. Cogent Communications con 196 nodi fisici. 

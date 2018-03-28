@@ -10,15 +10,15 @@ In primo luogo viene lanciato lo script "Script100Iterations.py" in questo modo:
 ~~~bash
 python Script100Iterations.py
 ~~~
-Questo script viene fatto eseguire per ogni topologia sopra elencata e per ogni rate(la percetuale di nodi selezionati) 100 volte.
+Questo script viene fatto eseguire per ogni topologia sopra elencata e per ogni rate (la percetuale di nodi selezionati) 100 volte.
 Con un totale di 1000 esecuzioni per topologia.
 
 Lo script consiste nell' applicare ad una topologia specifica questi due script:
 1. CompleteIterativeClustering_v5.py
 1. CompleteRecursiveClustering_v1.py
 
-Ossia applica l'algoritmo iterativo e ricorsovo per la creazione dei clusters.
-E produce un file output.json in cui sono contenute alcune info:
+Questi sono l'implementazione dell'algoritmo iterativo e ricorsivo per la creazione dei clusters.
+Una volta eseguito lo script produce un file output.json in cui sono contenute alcune info:
 ~~~json
 {
         "Extended_graph_nodes": 244, 
@@ -79,7 +79,7 @@ Quindi in totale avrò, per ogni Topologia, 10 file, uno per ogni rate, che cont
 
 Questi file sono utilizzati per disegnare i grafici box plot.
 
-Per generare un grafico basta lanciare lo script in questo modo cambiando semplicemente il nome dello script:
+Per generare un grafico basta lanciare lo script in questo modo:
 ~~~bash
 python Box_Plot_1v.py
 ~~~

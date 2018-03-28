@@ -91,3 +91,6 @@ Gli script sono 7 in totale:
 1. [Box_Plot_5v.py](https://github.com/netgroup-polito/passive-monitoring-technique/blob/master/Testing3/Box_Plot_5v.py): mostra la relazione tra i nodi selezionati e il diametro nel monitorato.  
 1. [Box_Plot_6v.py](https://github.com/netgroup-polito/passive-monitoring-technique/blob/master/Testing3/Box_Plot_6v.py): mostra la relazione tra i nodi selezionati e il numero di edges nel grafo monitorato.   
 1. [Box_Plot_7v.py](https://github.com/netgroup-polito/passive-monitoring-technique/blob/master/Testing3/Box_Plot_7v.py): mostra la relazione tra i nodi selezionati e il numero di edges nel grafo esteso.   
+
+Un esempio di box plot è il seguente che mostra la relazione tra i nodi selezionati e il diametro nel grafo esteso per la topologia Geant:
+![graph](https://github.com/netgroup-polito/passive-monitoring-technique/blob/master/Testing3/ExtendedDiameter.PNG)
